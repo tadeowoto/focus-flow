@@ -1,18 +1,12 @@
 @import "tailwindcss";
 
-/* Define las variables de color y la fuente dentro de @theme */
 @theme {
-  --color-mist-background: 224 242 241; /* #E0F2F1 */
-  --color-seafoam-secondary: 128 203 196; /* #80CBC4 */
-  --color-lagoon-accent: 77 182 172; /* #4DB6AC */
-  --color-slate: 84 110 122; /* #546E7A */
-  --color-lavender: 209 196 233; /* #D1C4E9 */
-  --color-cloud: 255 255 255; /* #FFFFFF */
+  --color-mist-background: #e0f2f1;
+  --color-seafoam-secondary: #80cbc4;
+  --color-lagoon-accent: #4db6ac;
+  --color-slate: #546e7a;
+  --color-lavender: #d1c4e9;
+  --color-cloud: #ffffff;
 
-  /* Define Inter como la fuente sans-serif predeterminada */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI";
-}
-
-body {
-  font-family: var(--font-sans);
 }

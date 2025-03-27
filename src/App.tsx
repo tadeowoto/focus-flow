@@ -1,8 +1,10 @@
+import { MainLayout } from "./layout/MainLayout";
+
 function App() {
   return (
-    <>
-      <h1 className="">Relax app</h1>
-    </>
+    <MainLayout>
+      <div></div>
+    </MainLayout>
   );
 }
 
