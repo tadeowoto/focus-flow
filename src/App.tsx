@@ -1,9 +1,10 @@
 import { MainLayout } from "./layout/MainLayout";
+import { MainMenu } from "./components/MainMenu";
 
 function App() {
   return (
     <MainLayout>
-      <div></div>
+      <MainMenu />
     </MainLayout>
   );
 }
