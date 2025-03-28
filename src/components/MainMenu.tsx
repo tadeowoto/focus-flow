@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { ReproductorWrapper } from "./ReproductorWrapper";
+import { Ambient } from "./Ambient";
+import { FocusPomodoro } from "./FocusPomodoro";
+
 export const MainMenu = () => {
   //TODO ISFOCUSACTIVE: MAIN CONTENT AND NAV COLOR SHOULD BE DIFFERENT
   //TODO IF !ISFOCUSACTIVE: MAIN CONTENT SHOULD BE AMBIENT SOUNDS
@@ -25,19 +29,15 @@ export const MainMenu = () => {
           </div>
         </nav>
       </div>
-      <div className="w-full bg-amber-200 h-200">
+      <div className="w-full">
         {isFocusActive ? (
-          <div>
-            <h1>
-              <p>Se mostraria el focus</p>
-            </h1>
-          </div>
+          <ReproductorWrapper>
+            <FocusPomodoro />
+          </ReproductorWrapper>
         ) : isRelaxActive ? (
-          <div>
-            <h1>
-              <p>Se mostraria el ambient </p>
-            </h1>
-          </div>
+          <ReproductorWrapper>
+            <Ambient />
+          </ReproductorWrapper>
         ) : null}
       </div>
     </article>
