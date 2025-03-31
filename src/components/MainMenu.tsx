@@ -23,9 +23,27 @@ export const MainMenu = () => {
     <article className="w-full h-fit flex flex-col gap-8">
       <div className=" flex items-center  justify-center h-10 w-full ">
         <nav className="w-14/15 h-full flex rounded-md bg-cloud ">
-          <div className="flex w-full h-full items-center justify-around">
-            <button onClick={handleRelaxMenu}>Relaxation</button>
-            <button onClick={handleFocusMenu}>Focus</button>
+          <div className="p-2 flex w-full h-full items-center justify-around">
+            <button
+              onClick={handleRelaxMenu}
+              className={` ${
+                isRelaxActive
+                  ? "w-full rounded-lg bg-seafoam-secondary text-cloud"
+                  : "w-full rounded-lg bg-cloud"
+              }`}
+            >
+              Relaxation
+            </button>
+            <button
+              onClick={handleFocusMenu}
+              className={` ${
+                isFocusActive
+                  ? "w-full rounded-lg bg-seafoam-secondary text-cloud"
+                  : "w-full rounded-lg bg-cloud"
+              }`}
+            >
+              Focus
+            </button>
           </div>
         </nav>
       </div>
