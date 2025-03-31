@@ -1,4 +1,16 @@
+import { useState } from "react";
+
 export const Ambient = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleButton = () => {
+    if (isPlaying) {
+      setIsPlaying(false);
+    } else {
+      setIsPlaying(true);
+    }
+  };
+
   return (
     <>
       <h1 className="text-2xl font-semibold text-slate">Ambient Sounds</h1>
@@ -17,8 +29,15 @@ export const Ambient = () => {
         </button>
       </div>
       <div>
-        <button className="w-30 h-10 rounded-lg text-cloud bg-seafoam-secondary">
-          Play
+        <button
+          className={`${
+            isPlaying
+              ? "w-30 h-10 rounded-lg text-slate bg-cloud border border-seafoam-secondary"
+              : "w-30 h-10 rounded-lg text-cloud bg-seafoam-secondary"
+          }`}
+          onClick={handleButton}
+        >
+          {isPlaying ? "Pause" : "Play"}
         </button>
       </div>
     </>
