@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 export const Ambient = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedSound, setSelectedSound] = useState<string>("rain");
-  const sounds: { name: string; file: string }[] = [
-    { name: "Rain", file: "/rain.mp3" },
-    { name: "Ocean", file: "/sea.wav" },
-    { name: "Birds", file: "/birds.flac" },
-    { name: "Wind", file: "/wind.wav" },
+  const sounds: { name: string; file: string; svg: string }[] = [
+    { name: "Rain", file: "/rain.mp3", svg: "/rain.svg" },
+    { name: "Ocean", file: "/sea.wav", svg: "/ocean.svg" },
+    { name: "Birds", file: "/birds.flac", svg: "/bird.svg" },
+    { name: "Wind", file: "/wind.wav", svg: "/wind.svg" },
   ];
 
   // estado que inicializa con un objeto Audio, y que se actualiza cuando se cambia el sonido seleccionado
@@ -53,12 +53,13 @@ export const Ambient = () => {
             <button
               key={sound.name}
               onClick={() => handleSoundSelect(sound.name)}
-              className={`w-30 h-10 rounded-lg border border-seafoam-secondary ${
+              className={`w-30 h-10 rounded-lg border border-seafoam-secondary flex items-center justify-center gap-2 ${
                 selectedSound === sound.name.toLowerCase()
                   ? "bg-seafoam-secondary text-cloud"
                   : ""
               }`}
             >
+              <img src={sound.svg} alt={sound.name} className="w-5 h-5" />
               {sound.name}
             </button>
           ))}
